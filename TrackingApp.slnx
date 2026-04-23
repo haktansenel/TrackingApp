@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="TrackingApp.API/TrackingApp.API.csproj" />
+  <Project Path="TrackingApp.Common/TrackingApp.Common.csproj" />
+  <Project Path="TrackingApp.Desktop/TrackingApp.Desktop.csproj" />
+</Solution>
