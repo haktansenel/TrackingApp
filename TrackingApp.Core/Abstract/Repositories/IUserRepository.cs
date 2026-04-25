@@ -8,6 +8,6 @@ namespace TrackingApp.Core.Abstract.Repositories
 {
     public interface IUserRepository
     {
-        Task<User> GetUserByUserName(string emailOrUsername);
+        Task<User> GetUserByUserNameOrEmail(string emailOrUsername);
     }
 }

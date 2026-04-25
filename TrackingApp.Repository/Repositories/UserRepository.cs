@@ -16,7 +16,7 @@ namespace TrackingApp.Repository.Repositories
         }
 
 
-        public async Task<User> GetUserByUserName(string emailOrUsername)
+        public async Task<User> GetUserByUserNameOrEmail(string emailOrUsername)
         {
             var user = await _context.Users
          .Where(u => (u.Email == emailOrUsername || u.UserName == emailOrUsername))
