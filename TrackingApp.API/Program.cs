@@ -1,5 +1,6 @@
 using Scalar.AspNetCore;
 using TrackingApp.API.Configuration;
+using TrackingApp.Core.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,17 +11,25 @@ var connectionString = builder.Configuration.GetConnectionString("MssqlConnectio
 
 #endregion
 
+
+
 builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
 #region Custom DI Configurations
 
+builder.Services.AddOptionsPattern(builder.Configuration);
+
 builder.Services.AddAutoMapperProfiles();
 
 builder.Services.AddDIMethods();
 
 builder.Services.EFCoreConfiguration(connectionString);
+
+builder.Services.AddJwtTokenConfiguration(builder.Configuration.GetSection("JwtSettings").Get<JwtSettingsOptions>());
+
+builder.Services.AddHttpContextAccessor();
 
 #endregion
 

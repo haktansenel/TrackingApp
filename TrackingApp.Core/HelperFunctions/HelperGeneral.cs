@@ -9,6 +9,8 @@ namespace TrackingApp.Core.HelperFunctions
     public static class HelperGeneral
     {
         private static char[] specialChars = { '*', '.', ',', '?', '_', '(', ')' };
+        private static string _version = string.Concat(DateTime.Now.Month, "_", DateTime.Now.Year,"_" ,DateTime.Now.Day);
+
         //AES-256 için 32 byte (256 bit) anahtar gereklidir
         private static readonly string Key = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6";
 
@@ -74,6 +76,8 @@ namespace TrackingApp.Core.HelperFunctions
             }
         }
 
+        public static string GetAPIVersion() => _version;
+        public static string GetCookieName() => string.Concat("TrackingApp_",_version);
 
     }
 }
