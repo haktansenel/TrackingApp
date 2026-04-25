@@ -8,6 +8,6 @@ namespace TrackingApp.Repository.Abstract.Services
 {
     public  interface ILoginService
     {
-         Task<BaseResponseDto<NoContentDto>>  Login(UserLoginDto userLoginDto);
+         Task<BaseResponseDto<UserLoginResponseDto>>  Login(UserLoginDto userLoginDto);
    }
 }
